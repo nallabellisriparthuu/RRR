@@ -1,0 +1,89 @@
+- What is React?
+----------------
+- React is the JavaScript library used to built user-interface. 
+- React is the only framework not library. It cannot built full-stack application with react alone.
+- React Handles only front-end/view layer of application.
+- React is developed by facebook for better user experience and later made open source.
+
+------------------------------------------------------------------------------------------------------------------------
+
+- Key Features:-
+----------------
+- React is the component based architecture. It application build reusable, independent component.
+- React has a simple JSX syntax mixed with JavaScript + HTML.
+- React create a SPA's (Single Page Application) dynamically and update the full page without reloads.
+- React rendering in the client-side and it handles browser rendering instead of server.
+
+------------------------------------------------------------------------------------------------------------------------
+
+- Why learn React?
+------------------
+- React is in highly demand in the most of the tech compines and it has long term support and it have extenive developer community server to support.
+- React is easy to learn and required only JS and HTML knowledged and it allow React native to build mobile application.
+
+------------------------------------------------------------------------------------------------------------------------
+
+- React Development Environment Setup - Essential Tools Guide
+
+------------------------------------------------------------------------------------------------------------------------
+
+- Creating React Project with Vite - Step-by-Step Guide
+
+------------------------------------------------------------------------------------------------------------------------
+
+- React Project Structure and Single Page Application Architecture - Detailed Guide
+
+------------------------------------------------------------------------------------------------------------------------
+
+- React Components
+------------------
+- What are React Component?
+---------------------------
+- React is the basic building block and it has the smallest and most independent React components, and it combines multiple small components into one component into another component, creating a hierarchical structure, and each component represents a specific piece of the user interface.
+
+Example: Side Bar like 'Search icon', 'Mice icon', 'input field', etc. , Logo, Button are some of the component and all combine togther make the webpage and some component can be reuse the across multiple page. 
+
+- Component structure in code
+----------------------------
+- File naming convention and creating file component
+----------------------------------------------------
+- Component of the file name must start with the capital letter like 'Hello' and end with '.jsx' extension like 'Hello.jsx'. 
+- For the better user experience create 'Component' folder inside the 'src' folder and file name.
+- File name should match the function component exactly.  
+
+- Component function structure
+------------------------------
+- Component function structure is JavaScript that always start with the capital letter for React Recogination and that return JSX code like HTML code.
+- syntax
+--------
+- function componentName () { return JSX }
+
+- Difference between JSX Vs HTML
+--------------------------------
+- In react we use 'className' attribute. In HTML we use 'class' attribute.
+- In react components are self-closing tag end with slash(/) like <componentName /> ✅ not like this <componentName>❌ or we have and use full tag also like HTML element <componentName></componentName>.
+- JSX allows mixing javaScript and HTML like syntax and it compiled by react not standard HTML. 
+
+- Creating and using component
+------------------------------
+- Components (Folder name in 'src' folder)
+- Hello.jsx (File name in 'Component' folder)
+
+//Hello.jsx
+function Hello (){
+    return (
+        <h1>This is Hello Component</h1>
+    )
+}
+
+export defualt Hello;
+
+- Export and import System
+--------------------------
+- After writting every 'component' at the end of it we have to 'export' the component to 'import in 'main component' to render in the browser. Eg: 'export defualt componentName'.
+- After 'export', in the main jsx file at the 'top' of it we have to 'import' folder of the file name and in the functional component we have to call like HTML tag (<componentName />) in JSX. we have to use relative path to it for the local component.
+Eg: 'import componentName from ./Components/componentName'.
+
+------------------------------------------------------------------------------------------------------------------------
+
+- What is JSX
