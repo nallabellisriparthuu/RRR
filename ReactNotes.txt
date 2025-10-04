@@ -86,5 +86,58 @@ Eg: 'import componentName from ./Components/componentName'.
 
 ------------------------------------------------------------------------------------------------------------------------
 
-- What is JSX
-- JSX
+- What is JSX?
+--------------
+- JSX stands for JavaScript extension it is th special syntax for react and it allow mixing HTML like syntax and JavaScript code in the single file and it is compiled by react build tool not standard HTML or JavaScript. It provide more readable way to create UI component compared to pure JavaScript.
+
+- Core JavaScript functionality in JSX
+--------------------------------------
+- In JSX we can integrate a varibale in the JavaScript to display in the markup using curly bracket {} and it execute javascript expression and display result in the real-time and it call javascript function with jsx and render there result values and create interactive and dynamic user-interface seamlessly.
+
+Hello.jsx
+----------
+
+let name = "JavaScript";
+function Hello () {
+    fuction greet () {
+        return "Happy learning"
+    }
+    return (
+        <div>
+            <h1>Welcome to {name} {10+20}</h1>
+            <h1>{greet ()}</h1>
+        </div>
+    )
+}
+
+- Curly Braces Syntax
+---------------------
+- Variable Display: {variableName} renders the value of JavaScript variables
+- Mathematical Expressions: {10 + 20} evaluates and displays mathematical calculations
+- Function Calls: {functionName()} executes functions and displays return values
+- Dynamic Evaluation: All JavaScript code within curly braces is evaluated at runtime
+
+- JSX Rules and Best Practices
+----------------------------
+- Single Root Element Rule
+------------------------
+- Critical Requirement: Every JSX return statement must have exactly one root element
+- Error Prevention: Multiple adjacent elements without wrapper cause compilation errors
+- Wrapper Solution: Use <div> or React Fragment to wrap multiple elements
+- Error Message: "Adjacent JSX elements must be wrapped in an enclosing tag"
+
+// Incorrect - Multiple root elements
+return (
+  <h1>First heading</h1>
+  <h1>Second heading</h1>
+);
+
+// Correct - Single root element with wrapper
+return (
+  <div>
+    <h1>First heading</h1>
+    <h1>Second heading</h1>
+  </div>
+);
+
+
