@@ -140,4 +140,38 @@ return (
   </div>
 );
 
+---------------------------------------------------------------------------------------------------------------
 
+- Reusability of Components in React
+------------------------------------
+- React encourge the breaking UI into small and reusable component.
+- Component make application modulur and each component has self-contained modulus and easir to maintain and manage large application.
+- Onces component is created we can re-use component multiple times like button is the component we can use them in Different place and save the time and keep code dry.
+- Compoenent hide implemement details like button is the compoenent and it have complex logic and in 'App.jsx' we use <button /> and make the code clean and easy to read.
+
+Hello.jsx
+---------
+function Hello () {
+    return (
+        <h1>This is reuse compoenent</h1>
+    )
+};
+
+export defualt Hello;
+
+App.jsx
+-------
+import Hello from './Components/Hello'
+function App () {
+    return (
+        <div>
+            <Hello/>
+            <Hello/>
+            <Hello/>
+            <Hello/>
+            <Hello/>
+        </div>
+    )
+}
+
+export defualt App
