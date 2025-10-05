@@ -175,3 +175,100 @@ function App () {
 }
 
 export defualt App
+
+---------------------------------------------------------------------------------------------------------------
+
+- What are porps?
+- props are also called propertires and it pass the values to the component to make them dynamically 
+- component without props are the static and remain the same content.
+- props allow reusing the same component with different data.
+
+- Why use props?
+----------------
+- We use props to pass data or send information to parent component to child component and we can pass the values like string, numbers, array, object or function.
+- In the same re-usable component we can pass differnet type of data in the same component using props.
+- Props can also carry function to handles event in child components.
+
+Hello.jsx
+---------
+function Hello (props) {
+    console.log(props) // Logs the props object
+    return (
+        <div>
+            <h1>{props.name}</h1>
+            <h1>{props.city} {props.state}</h1>
+        </div>
+    )
+}
+
+export default Hello
+
+- props is an object containing all properties passed to the component.
+- Access individual values with props.name or props.message.
+- JSX expressions are written inside curly braces {}.
+
+App.jsx
+-------
+import Hello from './componenets/Hello'
+
+function App () {
+    return (
+        <Hello name="ReactJS />
+        <Hello city="Hyderabad" state="Telangana" />
+    )
+}
+
+export default App
+
+---------------------------------------------------------------------------------------------------------------
+
+- Destructuring Props in React
+------------------------------
+- What is Destructuring?
+- Destructuring is the concept of javaScript not in react. It allow the extract the value from the object into seperate varibale for easire use like insted of repeatdly writting like 'props.name', 'props.city' you can extract them once .
+
+// src/components/Hello.jsx
+function Hello(props) {
+  const { name, message } = props;  // Destructuring props
+  return (
+    <h1>{message} {name}</h1>
+  );
+}
+
+export default Hello;
+
+Explanation:
+------------
+- const { name, message } = props; extracts name and message from the props object.
+- You can now directly use name and message instead of props.name and props.message.
+- Rule: Variable names must match the keys in the props object exactly.
+
+- Destructuring Directly in the Function Parameter
+--------------------------------------------------
+function Hello({ name, message, emoji }) {
+  return (
+    <h1>{message} {name} {emoji}</h1>
+  );
+}
+
+Advantages:
+-----------
+- No need for const { ... } = props; inside the function.
+- Makes the code more readable and concise.
+- Allows you to add more props easily (e.g., emoji).
+
+- Passing Props from Parent Component
+-------------------------------------
+// src/App.jsx
+import Hello from './components/Hello';
+
+function App() {
+  return (
+    <div>
+      <Hello name="Rob" message="Hi there" emoji="😊" />
+      <Hello name="Tom" message="Hello" emoji="👍" />
+    </div>
+  );
+}
+
+export default App;
