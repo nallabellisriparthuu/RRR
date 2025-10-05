@@ -179,8 +179,8 @@ export defualt App
 ---------------------------------------------------------------------------------------------------------------
 
 - What are porps?
-- props are also called propertires and it pass the values to the component to make them dynamically 
-- component without props are the static and remain the same content.
+- props is also know as propertires and it pass the values form parent component to child component to make them dynamically 
+- component without props are the static and render the same content.
 - props allow reusing the same component with different data.
 
 - Why use props?
@@ -240,7 +240,7 @@ export default Hello;
 Explanation:
 ------------
 - const { name, message } = props; extracts name and message from the props object.
-- You can now directly use name and message instead of props.name and props.message.
+- You can now directly use name and message instead of 'props.name' and 'props.message'.
 - Rule: Variable names must match the keys in the props object exactly.
 
 - Destructuring Directly in the Function Parameter
@@ -272,3 +272,32 @@ function App() {
 }
 
 export default App;
+
+- Immutability of Props in React
+--------------------------------
+- props are immutable they cannot change or mutated inside the the child componenet because they unidirectional flow from parent to child.
+- if you want to chnage the props of it you have to:-
+  - Lift the state to the parent
+  - Pass the update data as a new prop (OR)
+  - use local component state with 'useState'
+
+// src/components/Hello.jsx
+function Hello(props) {
+  // Accessing props normally
+  console.log(props.name, props.message, props.emoji);
+
+  // Attempting to mutate props
+  // props.name = "Jake";  // ❌ This will throw an error: Cannot assign to read-only property
+
+  return (
+    <h1>{props.message} {props.name} {props.emoji}</h1>
+  );
+}
+
+export default Hello;
+
+Explanation:
+------------
+- Props are read-only objects.
+- React throws an error if you try to directly assign a new value to a prop (Cannot assign to read-only property).
+- This ensures data consistency and predictable component behavior.
