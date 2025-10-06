@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Friut from './Friut'
 const Fruits = () => {
     let fruits = [
         {name: "Apple", price: 20, emoji: "🍎"},
@@ -8,17 +8,14 @@ const Fruits = () => {
         {name: "Dragon", price: 60, emoji: "🐲"},
         {name: "Kiwi", price: 30, emoji: "🥝"},
         {name: "Goa", price: 10, emoji: "🍏"}
-
     ]
   return (
     <div>
-        <h3>
-            <ul>
-                {fruits.map((fruit)=>(
-                    <li key={fruit.name}>{fruit.emoji} {fruit.name} ${fruit.price}</li>
-                ))}
-            </ul>
-        </h3>
+        <ul>
+            {fruits.map((fruit)=>(
+                <Friut key={fruit.name} name={fruit.name} price={fruit.price} emoji={fruit.emoji} />
+            ))}
+        </ul>
     </div>
   )
 }
